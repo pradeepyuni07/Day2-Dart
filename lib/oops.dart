@@ -98,20 +98,26 @@
 //   // // }
 // }
 
-  class getset{
-    String _str="";
+  // class getset{
+  //   String _str="";
+  //
+  //   String get  name => _str;
+  //    set  name (String a){
+  //      _str=a;
+  //
+  //   }
+  // }
 
-    String get  name => _str;
-     set  name (String a){
-       _str=a;
-
-    }
-  }
+class Test{
+     int _num=10;
+}
 
 void main() {
-    var obj=getset();
-    obj.name="pradeep";
-    print(obj.name);
+    var obj=Test();
+    print(obj._num);
+    // var obj=getset();
+    // obj.name="pradeep";
+    // print(obj.name);
     // var obj=A();
     // obj.mujheusekarnapadega();
   // var obj=Pradeep();
