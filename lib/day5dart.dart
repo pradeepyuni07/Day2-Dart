@@ -11,6 +11,9 @@ void main() async{
           print(value);
           receivePort.close();
       });
+
+      double value=20.000;
+      print(value.doubleFun());
   // Test<int> obj = Test(1, 2);
   // Test<String> obj1 = Test("pradeep", "meena");
 
@@ -92,3 +95,10 @@ void main() async{
 
 
   }
+
+
+    extension DoubleExtenstion on double{
+          int doubleFun(){
+              return this.toInt();
+          }
+    }
