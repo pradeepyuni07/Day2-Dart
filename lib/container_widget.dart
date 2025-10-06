@@ -33,22 +33,24 @@ class MyApp extends StatelessWidget {
           //   maxWidth: 200,
           //   minWidth: 100,
           // ),
-             foregroundDecoration: BoxDecoration(
-                 borderRadius: BorderRadius.all(Radius.elliptical(50, 150)),
-                 // color: Colors.green,
-                 border: Border.all(
-                   width: 2,
-                   color: Colors.red,
-                   strokeAlign: BorderSide.strokeAlignOutside,
-                   style: BorderStyle.solid,
-                 ),
-               gradient: RadialGradient(colors: [Colors.red, Colors.yellow, Colors.green],
-                 // focalRadius: 0.2,
+          foregroundDecoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.elliptical(50, 150)),
+            // color: Colors.green,
+            border: Border.all(
+              width: 2,
+              color: Colors.red,
+              strokeAlign: BorderSide.strokeAlignOutside,
+              style: BorderStyle.solid,
+            ),
+            gradient: RadialGradient(
+              colors: [Colors.red, Colors.yellow, Colors.green],
 
-                 stops: [0.3, 0.5, 1.0],
-             )),
-          // transform: Matrix4.rotationX(1),
-          // transformAlignment: Alignment.topLeft,
+              // focalRadius: 0.2,
+              stops: [0.3, 0.5, 1.0],
+            ),
+          ),
+          transform: Matrix4.rotationY(0.5),
+          transformAlignment: Alignment.center,
           decoration: BoxDecoration(
             // image: DecorationImage(
             //   image: NetworkImage(
@@ -68,20 +70,23 @@ class MyApp extends StatelessWidget {
               strokeAlign: BorderSide.strokeAlignOutside,
               style: BorderStyle.solid,
             ),
-            // boxShadow: [
-            //       // BoxShadow(color: Colors.black, spreadRadius: 30,blurRadius: 20),
-            //     BoxShadow(color: Colors.grey.withOpacity(0.5), offset: Offset(0,-80))
-            //
-            // ],
+            boxShadow: [
+                  // BoxShadow(color: Colors.black, spreadRadius: 30,blurRadius: 20),
+              BoxShadow(color: Colors.green,spreadRadius:30,blurRadius: 1,offset: Offset(0, 0)),
+
+              BoxShadow(color: Colors.yellow,spreadRadius:20,blurRadius: 2,offset: Offset(0, 0)),
+
+              BoxShadow(color: Colors.red,spreadRadius: 10,blurRadius: 3,offset: Offset(0, 0)),
+
+            ],
             gradient: LinearGradient(
               begin: AlignmentGeometry.topLeft,
               end: AlignmentGeometry.bottomRight,
               colors: [Colors.red, Colors.yellow, Colors.green],
               stops: [0.3, 0.5, 1.0],
+
               // tileMode: TileMode.mirror,
               // transform: GradientRotation(math.pi / 7),
-
-
             ),
 
             // gradient: RadialGradient(colors: [Colors.red, Colors.yellow, Colors.green],
@@ -89,12 +94,9 @@ class MyApp extends StatelessWidget {
             //   // focalRadius: 0.2,
             //     radius: 0.5,
             //   center:Alignment.center,
-
-
-             )
           ),
-
         ),
+      ),
     );
   }
 }
