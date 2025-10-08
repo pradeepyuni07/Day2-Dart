@@ -23,27 +23,27 @@ class MyApp extends StatelessWidget {
         child: Text(
           // semanticsLabel: "Greeting in Hindi and English",
           // textWidthBasis: TextWidthBasis.parent,
-            // textAlign: TextAlign.center,
-            //  textDirection: TextDirection.ltr,
-            softWrap: true,
-             // textScaleFactor: 1.5,
+          // textAlign: TextAlign.center,
+          //  textDirection: TextDirection.ltr,
+          softWrap: true,
+          // textScaleFactor: 1.5,
           overflow: TextOverflow.ellipsis,
-           // locale: Locale("hi","IN"),
+          // locale: Locale("hi","IN"),
           // maxLines: 1,
-            key: ValueKey("pradeep"),
+          key: ValueKey("pradeep"),
           "नमस्ते To flutter",
           style: TextStyle(
-             inherit: true,
+            inherit: true,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             fontSize: 25,
             letterSpacing: 0.9,
             wordSpacing: 0.5,
-              decoration: TextDecoration.lineThrough,
-                 decorationColor: Colors.red,
-               decorationStyle: TextDecorationStyle.dotted,
-                 // locale: Locale("hi","IN"),
-              // background: Paint()..color=Colors.red
+            decoration: TextDecoration.lineThrough,
+            decorationColor: Colors.red,
+            decorationStyle: TextDecorationStyle.dotted,
+            // locale: Locale("hi","IN"),
+            // background: Paint()..color=Colors.red
             foreground: Paint()
               ..shader = LinearGradient(
                 colors: [Colors.pink, Colors.blue],
@@ -52,7 +52,6 @@ class MyApp extends StatelessWidget {
             //   Shadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4),
             // ],
           ),
-
         ),
       ),
     );

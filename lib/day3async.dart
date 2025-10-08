@@ -5,11 +5,11 @@ class Pradeep {
     print("This is casacade");
   }
 
-  Stream<int> numbers() async*{
-      for(int i=0;i<=5;i++){
-        yield i;
-       await  Future.delayed(Duration(seconds: 2));
-      }
+  Stream<int> numbers() async* {
+    for (int i = 0; i <= 5; i++) {
+      yield i;
+      await Future.delayed(Duration(seconds: 2));
+    }
   }
   // Future<String> getData() async {
   //    return await  Future.delayed(Duration(milliseconds: 100), () {
@@ -64,12 +64,11 @@ class Pradeep {
 //   }
 
 void main() async {
-  var obj = Pradeep()..numbers().listen((value)=>print(value));
+  var obj = Pradeep()..numbers().listen((value) => print(value));
 
   // List<int>? list1=[567];
   // var list2 = [0, ...list1, 4];
   // print(list2);
-
 
   // obj.checkException();
   //   var t1 =  obj.task1();

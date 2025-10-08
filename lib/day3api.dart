@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-      useMaterial3: true,
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: true),
+      home: const MyApp(),
     ),
-    home: const MyApp(),
-  ));
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -85,9 +85,7 @@ class _MyAppState extends State<MyApp> {
                       Text("Fun Fact: ${value["fun_fact"] ?? "N/A"}"),
                       const SizedBox(height: 20),
                       const Text("Todos"),
-                      ...list
-                          .map<Widget>((task) => Text("• $task"))
-                          .toList(),
+                      ...list.map<Widget>((task) => Text("• $task")).toList(),
                     ],
                   ),
                 ),

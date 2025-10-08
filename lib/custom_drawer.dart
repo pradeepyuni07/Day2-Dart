@@ -9,9 +9,11 @@ class CustomDrawer extends StatefulWidget {
 }
 
 class _CustomDrawerState extends State<CustomDrawer> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: Colors.white,
       appBar: AppBar(),
       endDrawer: Drawer(
@@ -64,7 +66,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
             Expanded(
               child: SingleChildScrollView(
-
                 child: Column(
                   children: [
                     ListTile(
@@ -136,6 +137,15 @@ class _CustomDrawerState extends State<CustomDrawer> {
               ),
             ),
           ],
+        ),
+      ),
+
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            scaffoldKey.currentState?.openEndDrawer();
+          },
+          child: Text("click me"),
         ),
       ),
     );

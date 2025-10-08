@@ -31,7 +31,7 @@ class _WrapresState extends State<Wrapres> {
           spacing: 10,
           runSpacing: 12,
           children: List.generate(11, (index) {
-            return Container(height: 70, width: 80, color: getRandomColor(),);
+            return Container(height: 70, width: 80, color: getRandomColor());
           }),
         ),
       ),

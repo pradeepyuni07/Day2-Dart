@@ -209,12 +209,12 @@ void main() {
   // list2.add(90);
   // print(list2);
 
-    // var list3=List.filled(5, 1);
-    // print(list3);
+  // var list3=List.filled(5, 1);
+  // print(list3);
 
-    // var list4=List.generate(10, (index){
-    //      print("${index*2 } ");
-    // });
+  // var list4=List.generate(10, (index){
+  //      print("${index*2 } ");
+  // });
   // var list5 = [1, 2, 3];
   // list5.add(4);
   // list5.addAll([5,6,7,8]);
@@ -234,20 +234,13 @@ void main() {
   //   print("value =${item.value}");
   // }
 
-
   // list5.sort();
   // print(list5);
   // list5.sort((a,b)=> b.compareTo(a));
   // print(list5);
 
-
-
   // Normal Map
-  Map<String, int> marks = {
-    "Math": 90,
-    "Science": 85,
-    "English": 92
-  };
+  Map<String, int> marks = {"Math": 90, "Science": 85, "English": 92};
 
   print(marks);
 
@@ -261,9 +254,6 @@ void main() {
   print(student.containsKey("name"));
   print(student.containsValue(22));
 
-  student["lastname"]="meena";
+  student["lastname"] = "meena";
   print(student);
-
-
-
 }

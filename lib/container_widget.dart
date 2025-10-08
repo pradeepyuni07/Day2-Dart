@@ -71,13 +71,27 @@ class MyApp extends StatelessWidget {
               style: BorderStyle.solid,
             ),
             boxShadow: [
-                  // BoxShadow(color: Colors.black, spreadRadius: 30,blurRadius: 20),
-              BoxShadow(color: Colors.green,spreadRadius:30,blurRadius: 1,offset: Offset(0, 0)),
+              // BoxShadow(color: Colors.black, spreadRadius: 30,blurRadius: 20),
+              BoxShadow(
+                color: Colors.green,
+                spreadRadius: 30,
+                blurRadius: 1,
+                offset: Offset(0, 0),
+              ),
 
-              BoxShadow(color: Colors.yellow,spreadRadius:20,blurRadius: 2,offset: Offset(0, 0)),
+              BoxShadow(
+                color: Colors.yellow,
+                spreadRadius: 20,
+                blurRadius: 2,
+                offset: Offset(0, 0),
+              ),
 
-              BoxShadow(color: Colors.red,spreadRadius: 10,blurRadius: 3,offset: Offset(0, 0)),
-
+              BoxShadow(
+                color: Colors.red,
+                spreadRadius: 10,
+                blurRadius: 3,
+                offset: Offset(0, 0),
+              ),
             ],
             gradient: LinearGradient(
               begin: AlignmentGeometry.topLeft,

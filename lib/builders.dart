@@ -33,10 +33,9 @@ class _BuildersState extends State<Builders> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: InkWell(
-
         // onDoubleTap: _scrollDown2,
         child: ListView.builder(
-           dragStartBehavior: DragStartBehavior.start,
+          dragStartBehavior: DragStartBehavior.start,
           controller: _controller,
           itemCount: 50, // total items
           itemBuilder: (context, index) {

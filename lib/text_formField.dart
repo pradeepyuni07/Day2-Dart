@@ -104,7 +104,7 @@ class _TextFormfieldDemoState extends State<TextFormfieldDemo> {
                 controller: _passwordController,
                 focusNode: _passwordFocus,
                 decoration: InputDecoration(
-                   floatingLabelAlignment: FloatingLabelAlignment.center,
+                  floatingLabelAlignment: FloatingLabelAlignment.center,
                   labelText: "Password",
                   hintText: "Enter your password",
                   prefixIcon: Icon(Icons.lock),
@@ -137,7 +137,10 @@ class _TextFormfieldDemoState extends State<TextFormfieldDemo> {
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(vertical: 14),
                   backgroundColor: Colors.blueAccent,
-                  textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  textStyle: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               const SizedBox(height: 10),

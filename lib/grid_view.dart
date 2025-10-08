@@ -28,7 +28,6 @@ class _GridViewRevState extends State<GridViewRev> {
     );
   }
 
-
   @override
   void dispose() {
     _controller.dispose(); // ✅ Important: clean up
@@ -50,18 +49,20 @@ class _GridViewRevState extends State<GridViewRev> {
         itemCount: 51,
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 100, // max width per grid item
-          mainAxisExtent: 150,     // fixed height per item
-          crossAxisSpacing: 8,     // horizontal gap
-          mainAxisSpacing: 8,      // vertical gap
+          mainAxisExtent: 150, // fixed height per item
+          crossAxisSpacing: 8, // horizontal gap
+          mainAxisSpacing: 8, // vertical gap
         ),
         itemBuilder: (context, index) {
           return InkWell(
-              onTap: (){
-                  setState(() {
-                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${index}")));
-                  });
-              },
+            onTap: () {
+              setState(() {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text("${index}")));
+              });
+            },
             child: Container(
               decoration: BoxDecoration(
                 color: index % 2 == 0 ? Colors.blue : Colors.green,
@@ -74,10 +75,7 @@ class _GridViewRevState extends State<GridViewRev> {
               alignment: Alignment.center,
               child: Text(
                 "$index",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
+                style: const TextStyle(color: Colors.white, fontSize: 20),
               ),
             ),
           );
