@@ -13,7 +13,9 @@ class _FeedbackDemoState extends State<FeedbackDemo> {
   Future<void> _refreshData() async {
     await Future.delayed(const Duration(seconds: 2));
     setState(() {
+         print(items);
       items = List.generate(items.length + 5, (index) => index);
+         print(items);
     });
   }
 
@@ -135,21 +137,21 @@ class _FeedbackDemoState extends State<FeedbackDemo> {
           //   },
           //   child: Text("Dailog"),
           // ),
-          // Expanded(
-          //   child: RefreshIndicator(
-          //
-          //     onRefresh: _refreshData,
-          //     color: Colors.red,
-          //     backgroundColor: Colors.blue,
-          //     child: ListView.builder(
-          //       physics: const AlwaysScrollableScrollPhysics(),
-          //       itemCount: items.length,
-          //       itemBuilder: (context, index) => ListTile(
-          //         title: Text("Item ${items[index]}"),
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          Expanded(
+            child: RefreshIndicator(
+
+              onRefresh: _refreshData,
+              color: Colors.red,
+              backgroundColor: Colors.blue,
+              child: ListView.builder(
+                physics: const AlwaysScrollableScrollPhysics(),
+                itemCount: items.length,
+                itemBuilder: (context, index) => ListTile(
+                  title: Text("Item ${items[index]}"),
+                ),
+              ),
+            ),
+          ),
 
           // ElevatedButton(onPressed: (){
           //   showDialog(context: context, builder: (context){
