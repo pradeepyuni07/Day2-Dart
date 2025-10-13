@@ -13,6 +13,7 @@ import 'package:dart_app/rowcolumn.dart';
 import 'package:dart_app/stlessful.dart';
 import 'package:dart_app/text_field_widget.dart';
 import 'package:dart_app/text_formField.dart' show TextFormfieldDemo;
+import 'package:dart_app/toast_demo.dart';
 import 'package:dart_app/wrap_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Remove debug banner
-      home:PageViewDemo()
+      home:ToastDemo()
     );
   }
 }
