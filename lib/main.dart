@@ -6,6 +6,7 @@ import 'package:dart_app/custom_listtile.dart';
 import 'package:dart_app/fab_button.dart';
 import 'package:dart_app/grid_view.dart';
 import 'package:dart_app/img.dart';
+import 'package:dart_app/page_view_demo.dart';
 import 'package:dart_app/pnt.dart';
 import 'package:dart_app/row_widget.dart';
 import 'package:dart_app/rowcolumn.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Remove debug banner
-      home:Pnt()
+      home:PageViewDemo()
     );
   }
 }
