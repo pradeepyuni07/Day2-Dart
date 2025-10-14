@@ -62,6 +62,7 @@ class _PntState extends State<Pnt> {
             // indicatorColor: Colors.deepOrange,
             indicatorSize: TabBarIndicatorSize.tab,
             indicator: BoxDecoration(
+
               boxShadow: [
                 BoxShadow(spreadRadius: 1, blurRadius: 2, color: Colors.red),
 

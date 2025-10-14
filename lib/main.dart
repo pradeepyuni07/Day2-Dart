@@ -1,6 +1,7 @@
 import 'package:dart_app/builders.dart';
 import 'package:dart_app/click_event.dart';
 import 'package:dart_app/custom_bottombar.dart';
+import 'package:dart_app/custom_date_picker.dart';
 import 'package:dart_app/custom_drawer.dart';
 import 'package:dart_app/custom_listtile.dart';
 import 'package:dart_app/fab_button.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Remove debug banner
-      home:ToastDemo()
+      home:CustomDatePicker()
     );
   }
 }
