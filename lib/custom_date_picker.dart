@@ -162,8 +162,9 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
                   });
                 }
               },
-              child: Text("Select Date"),
-            ),
+
+               child: Text("Select Date"),
+             ),
 
             SizedBox(height: 30),
             Text("${DateFormat('dd/MM/yyyy').format(selectedDate)}"),
