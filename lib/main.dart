@@ -6,6 +6,7 @@ import 'package:dart_app/custom_date_picker.dart';
 import 'package:dart_app/custom_drawer.dart';
 import 'package:dart_app/custom_listtile.dart';
 import 'package:dart_app/custom_timepicker.dart';
+import 'package:dart_app/explicit_anim.dart';
 import 'package:dart_app/fab_button.dart';
 import 'package:dart_app/grid_view.dart';
 import 'package:dart_app/img.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Remove debug banner
-      home:AnimDemo()
+      home:ExplicitAnim()
 
     );
   }
