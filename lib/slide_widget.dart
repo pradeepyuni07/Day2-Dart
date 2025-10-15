@@ -29,7 +29,7 @@ class _SlideWidgetState extends State<SlideWidget> {
                        print(value);
                   },
                 activeColor: Colors.green,
-                  // divisions: 10,
+                  divisions: 100,
                    thumbColor: Colors.red,
                   inactiveColor: Colors.grey,
                   label: curr_value.toStringAsFixed(0),

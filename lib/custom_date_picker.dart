@@ -48,7 +48,7 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
                       data: Theme.of(context).copyWith(
                         datePickerTheme: DatePickerThemeData(
                           dayShape:
-                              MaterialStateProperty.resolveWith<OutlinedBorder>(
+                              WidgetStateProperty.resolveWith<OutlinedBorder>(
                                 (states) {
                                   return RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(
