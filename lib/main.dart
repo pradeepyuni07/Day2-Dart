@@ -20,6 +20,7 @@ import 'package:dart_app/scroll_date_time_picker.dart';
 import 'package:dart_app/slide_widget.dart';
 import 'package:dart_app/stepper_widget.dart';
 import 'package:dart_app/stlessful.dart';
+import 'package:dart_app/streambuilder_demo.dart';
 import 'package:dart_app/switch_widget.dart';
 import 'package:dart_app/text_field_widget.dart';
 import 'package:dart_app/text_formField.dart' show TextFormfieldDemo;
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Remove debug banner
-      home:ExplicitAnim()
+      home:StreambuilderDemo()
 
     );
   }
