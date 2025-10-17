@@ -27,9 +27,13 @@ import 'package:dart_app/text_formField.dart' show TextFormfieldDemo;
 import 'package:dart_app/toast_demo.dart';
 import 'package:dart_app/wrap_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'btn.dart' show Btn;
+import 'counter/counter/bloc.dart';
+import 'counter/counter/view.dart';
 import 'feedback.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,9 +45,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Remove debug banner
-      home:StreambuilderDemo()
-
+      debugShowCheckedModeBanner: false,
+      home: BlocProvider(
+        create: (_) => CounterBloc(),
+        child: const CounterPage(),
+      ),
     );
   }
 }
