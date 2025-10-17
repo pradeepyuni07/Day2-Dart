@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
-        create: (_) => CounterBloc(),
+        create: (_) => CounterCubit(),
         child: const CounterPage(),
       ),
     );
