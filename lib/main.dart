@@ -1,4 +1,5 @@
 import 'package:dart_app/anim_demo.dart';
+import 'package:dart_app/blocproperty/bloc.dart';
 import 'package:dart_app/builders.dart';
 import 'package:dart_app/click_event.dart';
 import 'package:dart_app/custom_bottombar.dart';
@@ -29,6 +30,7 @@ import 'package:dart_app/wrap_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'blocproperty/ui.dart';
 import 'btn.dart' show Btn;
 import 'counter/counter/bloc.dart';
 import 'counter/counter/view.dart';
@@ -47,8 +49,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
-        create: (_) => CounterCubit(),
-        child: const CounterPage(),
+        create: (_) => ColorBloc(),
+        child: const Ui(),
       ),
     );
   }
