@@ -32,10 +32,13 @@ class _PersonScreenState extends State<PersonScreen> {
       'icon': Icons.delivery_dining_outlined,
     },
     {'title': StringConstants.orderHistory, 'icon': Icons.local_shipping},
+    {'title': StringConstants.myOrder, 'icon': Icons.shopping_bag_outlined},
+
     {'title': StringConstants.reels, 'icon': Icons.video_call_outlined},
     {'title': StringConstants.notifications, 'icon': Icons.notifications},
     {'title': StringConstants.settings, 'icon': Icons.settings},
     {'title': StringConstants.logout, 'icon': Icons.logout},
+
   ];
   @override
   void initState() {

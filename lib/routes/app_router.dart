@@ -4,6 +4,7 @@ import 'package:bloc_project/presentation/bottom_nav/bottom_nav_screen.dart';
 import 'package:bloc_project/presentation/cache_reel/cache_reel_screen.dart';
 import 'package:bloc_project/presentation/delivery_address/delivery_address_screen.dart';
 import 'package:bloc_project/presentation/edit_profile/edit_profile_screen.dart';
+import 'package:bloc_project/presentation/myorder/my_order.dart';
 import 'package:bloc_project/presentation/notifications/notification_screen.dart';
 import 'package:bloc_project/presentation/order_history/order_history_screen.dart';
 import 'package:bloc_project/presentation/product_detail/product_detail_screen.dart';
@@ -26,6 +27,7 @@ class AppRoutes {
   static const String productDetail = '/product_detail';
   static const String editProfile = '/edit_profile';
   static const String orderHistory = '/order_history';
+  static const String myOrder = '/my_order';
   static const String setting = '/setting';
   static const String notifications = '/notifications';
   static const String deliveryAddress = '/delivery_address';
@@ -70,6 +72,9 @@ class AppRoutes {
       } else {
         return _errorRoutes('Need to pass user data detail...');
       }
+      case myOrder:
+        return MaterialPageRoute(builder: (_) =>MyOrderScreen ());
+
       case orderHistory:
         return MaterialPageRoute(builder: (_) => OrderHistoryScreen());
       case cacheReel:

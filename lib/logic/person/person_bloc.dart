@@ -15,7 +15,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../core/utils/app_image_picker.dart';
-sealed
+
 class PersonBloc extends Bloc<PersonEvent, PersonState> {
   PersonBloc() : super(PersonInitial()) {
     on<PersonDataLoad>((event, emit) {
@@ -67,21 +67,26 @@ class PersonBloc extends Bloc<PersonEvent, PersonState> {
         break;
       case 3:
         {
-          NavigationService.pushNamed(AppRoutes.cacheReel);
+          NavigationService.pushNamed(AppRoutes.myOrder);
         }
         break;
       case 4:
         {
-          NavigationService.pushNamed(AppRoutes.notifications);
+          NavigationService.pushNamed(AppRoutes.cacheReel);
         }
         break;
       case 5:
+        {
+          NavigationService.pushNamed(AppRoutes.notifications);
+        }
+        break;
+      case 6:
         {
           NavigationService.pushNamed(AppRoutes.setting);
         }
         break;
 
-      case 6:
+      case 7:
         {
           CommonWidgets.showAlertDialog(
             onPressedYes: () {

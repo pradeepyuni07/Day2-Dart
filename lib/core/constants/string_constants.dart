@@ -1,4 +1,7 @@
 class StringConstants {
+  static const String myOrder = 'My Order';
+  static const String status = 'Completed';
+
   static const String login = 'Login';
   static const String signUp = 'Sign Up';
   static const String yes = 'Yes';

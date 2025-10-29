@@ -39,4 +39,7 @@ class DecreaseQuantity extends CartEvent{
   List<Object?> get props=> [productId];
 }
 
-class ClearCart extends CartEvent {}
+class ClearCart extends CartEvent {
+
+}
+class UpdateModelDataEvent extends CartEvent{}

@@ -11,8 +11,13 @@ class CartBloc extends Bloc<CartEvent,CartState>{
     on<RemoveProductFromCart>(_removeProductFromCart);
     on<IncreaseQuantity>(_increaseQuantity);
     on<DecreaseQuantity>(_decreaseQuantity);
+    on<ClearCart>(_clearCart);
+
   }
 
+   void _clearCart(ClearCart event,Emitter <CartState>emit){
+    emit(CartState(cartItems: []));
+   }
 
   void _onAddProduct(AddProductToCart event, Emitter<CartState> emit) {
     final existingIndex = state.cartItems.indexWhere((item) => item.id == event.product.id);
