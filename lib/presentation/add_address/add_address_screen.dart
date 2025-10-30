@@ -10,6 +10,7 @@ import 'package:bloc_project/logic/delivery_address/delivery_address_state.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../core/validators/input_validators.dart';
 class AddAddressScreen extends StatefulWidget{
   const AddAddressScreen({super.key});
@@ -48,7 +49,7 @@ class _AddAddressState extends State<AddAddressScreen>{
       },
         child: BlocBuilder<AddAddressBloc,AddAddressState>(builder: (context,state){
           return Scaffold(
-            appBar: CommonWidgets.appBar(title: StringConstants.addNewAddress),
+            appBar: CommonWidgets.appBar(title: StringConstants.addNewAddress.tr),
             backgroundColor: AppColors.backGroundColor,
             floatingActionButton:    BlocBuilder<DeliveryAddressBloc,DeliveryAddressState>(builder: (context,deliveryState){
               return CommonWidgets.commonElevatedButton(
@@ -63,7 +64,7 @@ class _AddAddressState extends State<AddAddressScreen>{
                   context: context,
                   showLoading: state.isSubmitting,
                   buttonMargin: EdgeInsets.symmetric(horizontal: 15.w),
-                  child: Text(StringConstants.addNewAddress,style: AppTextStyle.titleStyle18bw,)
+                  child: Text(StringConstants.addNewAddress.tr,style: AppTextStyle.titleStyle18bw,)
               );
             }),
             floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -77,43 +78,43 @@ class _AddAddressState extends State<AddAddressScreen>{
                       CommonWidgets.commonTextField(
                        controller: typeController,
                        validator: InputValidators.validateField,
-                        hintText: StringConstants.enterHere,
-                        labelText: StringConstants.selectAddressType,
+                        hintText: StringConstants.enterHere.tr,
+                        labelText: StringConstants.selectAddressType.tr,
                         onChanged: (type)=>context.read<AddAddressBloc>().add(AddressUpdated(type: type))
                       ),
                       CommonWidgets.commonTextField(
                           controller: addressController,
                           validator: InputValidators.validateField,
-                          hintText: StringConstants.enterHere,
-                          labelText: StringConstants.address,
+                          hintText: StringConstants.enterHere.tr,
+                          labelText: StringConstants.address.tr,
                           onChanged: (address)=>context.read<AddAddressBloc>().add(AddressUpdated(address: address))
                       ),
                       CommonWidgets.commonTextField(
                           controller: houseNumberController,
                           validator: InputValidators.validateField,
-                          hintText: StringConstants.enterHere,
-                          labelText: StringConstants.houseNumber,
+                          hintText: StringConstants.enterHere.tr,
+                          labelText: StringConstants.houseNumber.tr,
                           onChanged: (houseNumber)=>context.read<AddAddressBloc>().add(AddressUpdated(houseNumber: houseNumber))
                       ),
                       CommonWidgets.commonTextField(
                           controller: cityController,
                           validator: InputValidators.validateField,
-                          hintText: StringConstants.enterHere,
-                          labelText: StringConstants.city,
+                          hintText: StringConstants.enterHere.tr,
+                          labelText: StringConstants.city.tr,
                           onChanged: (city)=>context.read<AddAddressBloc>().add(AddressUpdated(city: city))
                       ),
                       CommonWidgets.commonTextField(
                           controller: pinCodeController,
                           validator: InputValidators.validateField,
-                          hintText: StringConstants.enterHere,
-                          labelText: StringConstants.pinCode,
+                          hintText: StringConstants.enterHere.tr,
+                          labelText: StringConstants.pinCode.tr,
                           onChanged: (pinCode)=>context.read<AddAddressBloc>().add(AddressUpdated(pinCode: pinCode))
                       ),
                       CommonWidgets.commonTextField(
                           controller: stateController,
                           validator: InputValidators.validateField,
-                          hintText: StringConstants.enterHere,
-                          labelText: StringConstants.state,
+                          hintText: StringConstants.enterHere.tr,
+                          labelText: StringConstants.state.tr,
                           onChanged: (state)=>context.read<AddAddressBloc>().add(AddressUpdated(state: state))
                       ),
 

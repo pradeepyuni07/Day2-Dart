@@ -7,6 +7,7 @@ import 'package:bloc_project/logic/order_history/order_history_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../core/themes/app_text_style.dart';
 import '../../data/models/get_product_model.dart';
 
@@ -25,7 +26,7 @@ class OrderHistoryScreen extends StatelessWidget{
                builder: (context,state){
                  return Scaffold(
                    backgroundColor: AppColors.backGroundColor,
-                   appBar: CommonWidgets.appBar(title: StringConstants.orderHistory),
+                   appBar: CommonWidgets.appBar(title: StringConstants.orderHistory.tr),
                    body: state.orderHistoryList.isNotEmpty?Column(
                      children: [
                        ListView.builder(
@@ -79,7 +80,7 @@ class OrderHistoryScreen extends StatelessWidget{
                      ],
                    ):
                    Center(
-                     child: Text(StringConstants.productNotFound,style: AppTextStyle.titleStyle16bw,),
+                     child: Text(StringConstants.productNotFound.tr,style: AppTextStyle.titleStyle16bw,),
                    ),
                  );
                }

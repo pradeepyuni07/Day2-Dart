@@ -4,6 +4,7 @@ import 'package:bloc_project/presentation/bottom_nav/bottom_nav_screen.dart';
 import 'package:bloc_project/presentation/cache_reel/cache_reel_screen.dart';
 import 'package:bloc_project/presentation/delivery_address/delivery_address_screen.dart';
 import 'package:bloc_project/presentation/edit_profile/edit_profile_screen.dart';
+import 'package:bloc_project/presentation/language/language_screen.dart';
 import 'package:bloc_project/presentation/myorder/my_order.dart';
 import 'package:bloc_project/presentation/notifications/notification_screen.dart';
 import 'package:bloc_project/presentation/order_history/order_history_screen.dart';
@@ -29,6 +30,7 @@ class AppRoutes {
   static const String orderHistory = '/order_history';
   static const String myOrder = '/my_order';
   static const String setting = '/setting';
+  static const String language = '/language';
   static const String notifications = '/notifications';
   static const String deliveryAddress = '/delivery_address';
   static const String addAddress = '/add_address';
@@ -83,6 +85,9 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => SettingScreen());
       case notifications:
         return MaterialPageRoute(builder: (_) => NotificationScreen());
+      case language:
+        return MaterialPageRoute(builder: (_) => LanguageScreen());
+
         case deliveryAddress:
         return MaterialPageRoute(builder: (_) => DeliveryAddressScreen());
       case addAddress:

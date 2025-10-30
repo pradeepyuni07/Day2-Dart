@@ -4,6 +4,7 @@ import 'package:bloc_project/core/navigation/navigation_service.dart';
 import 'package:bloc_project/core/themes/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 import '../../data/models/cache_video_model.dart';
 import '../../logic/cache_reel/cache_reel_bloc.dart';
@@ -47,7 +48,7 @@ class _ReelScreenState extends State<CacheReelScreen> {
         },
         child: Scaffold(
           appBar: AppBar(
-            title: Text(StringConstants.reels,style: AppTextStyle.titleStyle18bw,),
+            title: Text(StringConstants.reels.tr,style: AppTextStyle.titleStyle18bw,),
             leading:GestureDetector(
               onTap: () {
                 _reelBloc.add(PauseAllVideosEvent());

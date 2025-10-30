@@ -9,10 +9,11 @@ abstract class MyOrderEvent extends Equatable {
 }
 
 class MyOrderData extends MyOrderEvent {
-  final List<MyOrderModel> orders;
+  final List<dynamic> orders;
 
   const MyOrderData({required this.orders});
 
   @override
   List<Object?> get props => [orders];
 }
+class GetMyOrderEvent extends MyOrderEvent{}

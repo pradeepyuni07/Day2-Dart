@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../core/constants/image_constants.dart';
 import '../../core/constants/length.dart';
 import '../../core/themes/app_text_style.dart';
@@ -26,7 +27,7 @@ class ProductDetailScreen extends StatelessWidget{
           create: (_) => ProductDetailBloc()..add(ProductLoaded(product)),
         child: Scaffold(
           backgroundColor: AppColors.backGroundColor,
-          appBar: CommonWidgets.appBar(title: StringConstants.productDetail),
+          appBar: CommonWidgets.appBar(title: StringConstants.productDetail.tr),
           body: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
@@ -68,9 +69,9 @@ class ProductDetailScreen extends StatelessWidget{
                             CommonWidgets.verticalSpace(height: 10.h),
                             Text('\$ ${state.product.price}',style: AppTextStyle.titleStyle16bw,),
                             CommonWidgets.verticalSpace(height: 20.h),
-                            Text(StringConstants.description,style: AppTextStyle.titleStyle16bw,),
+                            Text(StringConstants.description.tr,style: AppTextStyle.titleStyle16bw,),
                             CommonWidgets.verticalSpace(height: 10.h),
-                            Text(StringConstants.test,style: AppTextStyle.titleStyle14w,),
+                            Text(StringConstants.test.tr,style: AppTextStyle.titleStyle14w,),
 
 
 
@@ -96,7 +97,7 @@ class ProductDetailScreen extends StatelessWidget{
                                   context.read<CartBloc>().add(AddProductToCart(product));
                                 },
                                 context: context,
-                              child: Text(StringConstants.addToCart,style: AppTextStyle.titleStyle20bw,)
+                              child: Text(StringConstants.addToCart.tr,style: AppTextStyle.titleStyle20bw,)
                             )
                           ],
                         ),

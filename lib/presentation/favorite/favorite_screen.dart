@@ -7,6 +7,7 @@ import 'package:bloc_project/logic/favorite/favorite_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../core/constants/image_constants.dart';
 import '../../core/themes/app_text_style.dart';
 import '../../data/models/get_product_model.dart';
@@ -24,7 +25,7 @@ class FavoriteScreen extends StatelessWidget{
 
         return Scaffold(
           backgroundColor: AppColors.backGroundColor,
-          appBar: CommonWidgets.appBar(title: StringConstants.favoriteProducts,wantBackButton: false),
+          appBar: CommonWidgets.appBar(title: StringConstants.favoriteProducts.tr,wantBackButton: false),
           body:Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
@@ -107,7 +108,7 @@ class FavoriteScreen extends StatelessWidget{
                         }
                     )
                 ):
-                Center(child: Text(StringConstants.favoriteProductsNotAvailable,style: AppTextStyle.titleStyle20bw,)),
+                Center(child: Text(StringConstants.favoriteProductsNotAvailable.tr,style: AppTextStyle.titleStyle20bw,)),
               ],
             ),
           ) ,

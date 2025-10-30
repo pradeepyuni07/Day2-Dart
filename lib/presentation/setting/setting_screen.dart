@@ -8,6 +8,7 @@ import 'package:bloc_project/logic/setting/setting_state.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 class SettingScreen extends StatelessWidget{
       const SettingScreen({super.key});
@@ -21,7 +22,7 @@ class SettingScreen extends StatelessWidget{
          child: BlocBuilder<SettingBloc,SettingState>(builder: (context,state){
            return Scaffold(
              backgroundColor: AppColors.backGroundColor,
-             appBar: CommonWidgets.appBar(title: StringConstants.settings),
+             appBar: CommonWidgets.appBar(title: StringConstants.settings.tr),
              body: Container(
                margin: EdgeInsets.symmetric(horizontal: 5.w),
                child: state.settingList.isNotEmpty?

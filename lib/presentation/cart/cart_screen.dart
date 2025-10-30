@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -28,7 +29,7 @@ class CartScreen extends StatelessWidget {
           return Scaffold(
             backgroundColor: AppColors.backGroundColor,
             appBar: CommonWidgets.appBar(
-              title: StringConstants.myShoppingCart,
+              title: StringConstants.myShoppingCart.tr,
               wantBackButton: false,
             ),
             body: state.cartItems.isNotEmpty
@@ -84,7 +85,7 @@ class CartScreen extends StatelessWidget {
                                                         .spaceBetween,
                                                 children: [
                                                   Text(
-                                                    item.title,
+                                                    item.title.tr,
                                                     style: AppTextStyle
                                                         .titleStyle16bw,
                                                   ),
@@ -207,8 +208,8 @@ class CartScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CommonWidgets.commonTextField(
-                              hintText: StringConstants.promoCode,
-                              labelText: StringConstants.promoCode,
+                              hintText: StringConstants.promoCode.tr,
+                              labelText: StringConstants.promoCode.tr,
                               horizontalPadding: 3.w,
                               suffixIcon: CommonWidgets.customBackgroundFrame(
                                 onPressed: () {},
@@ -216,7 +217,7 @@ class CartScreen extends StatelessWidget {
                                 height: 44.h,
                                 width: 110.w,
                                 child: Text(
-                                  StringConstants.apply,
+                                  StringConstants.apply.tr,
                                   style: AppTextStyle.titleStyle18bw,
                                 ),
                               ),
@@ -226,7 +227,7 @@ class CartScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '${StringConstants.subtotal}:',
+                                  '${StringConstants.subtotal.tr}:',
                                   style: AppTextStyle.titleStyle16bw,
                                 ),
                                 Text(
@@ -239,7 +240,7 @@ class CartScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '${StringConstants.deliveryFee}:',
+                                  '${StringConstants.deliveryFee.tr}:',
                                   style: AppTextStyle.titleStyle16bw,
                                 ),
                                 Text(
@@ -252,7 +253,7 @@ class CartScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '${StringConstants.total}:',
+                                  '${StringConstants.total.tr}:',
                                   style: AppTextStyle.titleStyle16bw,
                                 ),
                                 Text(
@@ -272,22 +273,22 @@ class CartScreen extends StatelessWidget {
                                   context.read<CartBloc>().state.cartItems,
                                 );
 
-                                List<MyOrderModel> modelList = [];
-
-                                modelList = updatedItems.map((item) {
-                                  return MyOrderModel(
-                                    id: item.id,
-                                    title: item.title,
-                                    image: item.image,
-                                    price: item.price,
-                                    dateTime: DateTime.now(),
-                                  );
-                                }).toList();
+                                // List<MyOrderModel> modelList = [];
+                                //
+                                // modelList = updatedItems.map((item) {
+                                //   return MyOrderModel(
+                                //     id: item.id,
+                                //     title: item.title,
+                                //     image: item.image,
+                                //     price: item.price,
+                                //     dateTime: DateTime.now(),
+                                //   );
+                                // }).toList();
                                 // print("************************************************************************************************************************************");
                                 // print(modelList[0].dateTime);
 
                                 context.read<MyOrderBloc>().add(
-                                  MyOrderData(orders: modelList),
+                                  MyOrderData(orders: updatedItems),
                                 );
                                 context.read<CartBloc>().add(ClearCart());
                               }
@@ -322,7 +323,7 @@ class CartScreen extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                                 child: Text(
-                                  StringConstants.checkout,
+                                  StringConstants.checkout.tr,
                                   style: AppTextStyle.titleStyle20bw,
                                 ),
                               ),
@@ -334,7 +335,7 @@ class CartScreen extends StatelessWidget {
                   )
                 : Center(
                     child: Text(
-                      StringConstants.productNotFound,
+                      StringConstants.productNotFound.tr,
                       style: AppTextStyle.titleStyle16bw,
                     ),
                   ),

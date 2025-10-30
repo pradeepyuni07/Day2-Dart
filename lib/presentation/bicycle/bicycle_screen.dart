@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:get/get.dart';
 import 'package:gradient_borders/gradient_borders.dart';
 import '../../core/constants/image_constants.dart';
 import 'dart:math' as math;
@@ -64,7 +65,7 @@ class BiCycleScreen extends StatelessWidget{
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(StringConstants.chooseYourBike,style: AppTextStyle.titleStyle20bw,),
+                          Text(StringConstants.chooseYourBike.tr,style: AppTextStyle.titleStyle20bw,),
                           CommonWidgets.appIcons(assetName: IconConstants.icSearch,height: 44.h,width: 44.h)
                         ],
                       ),
@@ -109,7 +110,7 @@ class BiCycleScreen extends StatelessWidget{
                             ),
                             Positioned(
                                 left: 10.w,bottom: 20.h,
-                                child: Text('30 % OFF',style: AppTextStyle.titleStyle20bw,)
+                                child: Text(StringConstants.off.tr,style: AppTextStyle.titleStyle20bw,)
                             )
                           ],
                         ),
@@ -141,7 +142,7 @@ class BiCycleScreen extends StatelessWidget{
                                     ),
                                     // image:DecorationImage(image: AssetImage(ImageConstants.imgProductBg,))
                                   ),
-                                  child: Text('All',style: AppTextStyle.titleStyle20bw,),
+                                  child: Text(StringConstants.all.tr,style: AppTextStyle.titleStyle20bw,),
                                 ),
                               ),
                               GestureDetector(
@@ -291,7 +292,7 @@ class BiCycleScreen extends StatelessWidget{
                                               crossAxisAlignment: CrossAxisAlignment.start,
 
                                               children: [
-                                                Text('${item.title} ',style: AppTextStyle.titleStyle14w,),
+                                                Text('${item.title.tr} ',style: AppTextStyle.titleStyle14w,),
                                                 Text('PEUGEOT - LR01 ',style: AppTextStyle.titleStyle16bw,),
                                                 Text('\$ ${item.price}',style: AppTextStyle.titleStyle14w,),
                                               ],

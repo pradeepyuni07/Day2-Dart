@@ -9,6 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:gradient_borders/gradient_borders.dart';
 import 'package:http/http.dart' as http;
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -794,18 +795,18 @@ class CommonWidgets {
     showCupertinoModalPopup<void>(
       context: NavigationService.navigatorKey.currentContext!,
       builder: (BuildContext context) => CupertinoAlertDialog(
-        title: Text(title),
-        content: Text(content),
+        title: Text(title.tr),
+        content: Text(content.tr),
         actions: <CupertinoDialogAction>[
           CupertinoDialogAction(
             isDefaultAction: true,
             onPressed: () => NavigationService.pop(),
-            child: Text(StringConstants.no),
+            child: Text(StringConstants.no.tr),
           ),
           CupertinoDialogAction(
             isDestructiveAction: true,
             onPressed: onPressedYes,
-            child: Text(StringConstants.yes),
+            child: Text(StringConstants.yes.tr),
           ),
         ],
       ),

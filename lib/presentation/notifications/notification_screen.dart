@@ -8,6 +8,7 @@ import 'package:bloc_project/logic/notifications/notification_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class NotificationScreen extends StatelessWidget{
   const NotificationScreen({super.key});
@@ -20,7 +21,7 @@ class NotificationScreen extends StatelessWidget{
        child: BlocBuilder<NotificationBloc,NotificationState>(builder: (context,state){
         return Scaffold(
           backgroundColor: AppColors.backGroundColor,
-          appBar: CommonWidgets.appBar(title: StringConstants.notifications),
+          appBar: CommonWidgets.appBar(title: StringConstants.notifications.tr),
           body: Padding(
             padding:  EdgeInsets.symmetric(horizontal: 15.w,vertical: 10.h),
             child: ListView.builder(

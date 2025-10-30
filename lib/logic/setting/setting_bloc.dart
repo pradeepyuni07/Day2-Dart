@@ -1,6 +1,8 @@
+import 'package:bloc_project/core/constants/string_constants.dart';
 import 'package:bloc_project/logic/setting/setting_event.dart';
 import 'package:bloc_project/logic/setting/setting_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 class SettingBloc extends  Bloc<SettingEvent,SettingState>{
   int _refreshCount=1;
@@ -9,19 +11,19 @@ class SettingBloc extends  Bloc<SettingEvent,SettingState>{
       emit(SettingState(
         settingList: [
           {
-            'title':'App Update',
+            'title':StringConstants.appUpdate.tr,
             'status':false,
           },
           {
-            'title':'Offer Update',
+            'title':StringConstants.offerUpdate.tr,
             'status':false,
           },
           {
-            'title':'Sound',
+            'title':StringConstants.sound.tr,
             'status':false,
           },
           {
-            'title':'Vibration',
+            'title':StringConstants.vibration.tr,
             'status':false,
           }
         ]

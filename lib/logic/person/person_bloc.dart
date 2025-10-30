@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:bloc_project/core/constants/icons_constant.dart';
 import 'package:bloc_project/core/constants/image_constants.dart';
+import 'package:bloc_project/core/constants/string_constants.dart';
 import 'package:bloc_project/core/navigation/navigation_service.dart';
 import 'package:bloc_project/core/widgets/common_widgets.dart';
 import 'package:bloc_project/data/models/get_user_model.dart';
@@ -12,6 +13,7 @@ import 'package:bloc_project/logic/splash/splash_bloc.dart';
 import 'package:bloc_project/logic/splash/splash_event.dart';
 import 'package:bloc_project/routes/app_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../core/utils/app_image_picker.dart';
@@ -24,11 +26,11 @@ class PersonBloc extends Bloc<PersonEvent, PersonState> {
       emit(
         PersonState(
           userModel: UserModel(
-            id: '1',
-            name: 'Arvind Kumar',
-            email: 'arvind@gmail.com',
-            phone: '9352792687',
-            address: 'Indore ,Vijay Nagar',
+            id: StringConstants.id.tr,
+            name: StringConstants.name.tr,
+            email: StringConstants.email.tr,
+            phone: StringConstants.phone.tr,
+            address: StringConstants.address.tr,
             image: ImageConstants.imgBannerBg,
           ),
         ),
@@ -82,11 +84,17 @@ class PersonBloc extends Bloc<PersonEvent, PersonState> {
         break;
       case 6:
         {
-          NavigationService.pushNamed(AppRoutes.setting);
+          NavigationService.pushNamed(AppRoutes.language);
         }
         break;
 
       case 7:
+        {
+          NavigationService.pushNamed(AppRoutes.setting);
+        }
+        break;
+
+      case 8:
         {
           CommonWidgets.showAlertDialog(
             onPressedYes: () {

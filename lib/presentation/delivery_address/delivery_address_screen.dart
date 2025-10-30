@@ -12,6 +12,7 @@ import 'package:bloc_project/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class DeliveryAddressScreen extends StatelessWidget{
   const DeliveryAddressScreen({super.key});
@@ -23,7 +24,7 @@ class DeliveryAddressScreen extends StatelessWidget{
       child: BlocBuilder<DeliveryAddressBloc,DeliveryAddressState>(builder: (context,state){
         return Scaffold(
           backgroundColor: AppColors.backGroundColor,
-          appBar: CommonWidgets.appBar(title: StringConstants.deliveryAddress),
+          appBar: CommonWidgets.appBar(title: StringConstants.deliveryAddress.tr),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButton: CommonWidgets.customBackgroundFrame(
             width: AppLength.screenFullWidth(),
@@ -33,7 +34,7 @@ class DeliveryAddressScreen extends StatelessWidget{
                 NavigationService.pushNamed(AppRoutes.addAddress);
               },
               context: context,
-            child: Text(StringConstants.addNewAddress,style: AppTextStyle.titleStyle18bw,)
+            child: Text(StringConstants.addNewAddress.tr,style: AppTextStyle.titleStyle18bw,)
           ),
           body: Container(
             height: AppLength.screenFullHeight(),
@@ -48,7 +49,7 @@ class DeliveryAddressScreen extends StatelessWidget{
                 state.addressList.isEmpty?
                     Align(
                       alignment: Alignment.center,
-                      child: Text('Address not found ....',style: AppTextStyle.titleStyle20bw,),
+                      child: Text(StringConstants.addressNotFound.tr,style: AppTextStyle.titleStyle20bw,),
                     ):
                 ListView.builder(
                     itemCount: state.addressList.length,

@@ -12,6 +12,9 @@ import 'package:bloc_project/logic/person/person_event.dart';
 import 'package:bloc_project/logic/person/person_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:bloc_project/core/constants/string_constants.dart';
+
 
 import '../../core/constants/string_constants.dart';
 import '../../core/utils/app_image_picker.dart';
@@ -25,21 +28,7 @@ class PersonScreen extends StatefulWidget {
 }
 
 class _PersonScreenState extends State<PersonScreen> {
-  List<Map<String, dynamic>> itemList = [
-    {'title': StringConstants.editProfile, 'icon': Icons.person},
-    {
-      'title': StringConstants.deliveryAddress,
-      'icon': Icons.delivery_dining_outlined,
-    },
-    {'title': StringConstants.orderHistory, 'icon': Icons.local_shipping},
-    {'title': StringConstants.myOrder, 'icon': Icons.shopping_bag_outlined},
 
-    {'title': StringConstants.reels, 'icon': Icons.video_call_outlined},
-    {'title': StringConstants.notifications, 'icon': Icons.notifications},
-    {'title': StringConstants.settings, 'icon': Icons.settings},
-    {'title': StringConstants.logout, 'icon': Icons.logout},
-
-  ];
   @override
   void initState() {
     super.initState();
@@ -48,6 +37,24 @@ class _PersonScreenState extends State<PersonScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List<Map<String, dynamic>> itemList = [
+      {'title': StringConstants.editProfile.tr, 'icon': Icons.person},
+      {
+        'title': StringConstants.deliveryAddress.tr,
+        'icon': Icons.delivery_dining_outlined,
+      },
+      {'title': StringConstants.orderHistory.tr, 'icon': Icons.local_shipping},
+      {'title': StringConstants.myOrder.tr, 'icon': Icons.shopping_bag_outlined},
+
+      {'title': StringConstants.reels.tr, 'icon': Icons.video_call_outlined},
+      {'title': StringConstants.notifications.tr, 'icon': Icons.notifications},
+      {'title': StringConstants.language.tr, 'icon': Icons.language_outlined},
+
+      {'title': StringConstants.settings.tr, 'icon': Icons.settings},
+      {'title': StringConstants.logout.tr, 'icon': Icons.logout},
+
+    ];
+     print(".......#############,${StringConstants.editProfile.tr}");
     return BlocListener<PersonBloc, PersonState>(
       listener: (context, state) {
         if (state is PersonError) {

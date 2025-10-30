@@ -13,6 +13,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 class LoginScreen extends StatefulWidget{
   const LoginScreen({super.key});
   @override
@@ -75,8 +76,8 @@ class _LoginState extends State<LoginScreen>{
                                 key: WidgetKeys.loginEmailField,
                                 controller: emailController,
                                 validator: InputValidators.validateEmail,
-                                  hintText: StringConstants.enterEmail,
-                                  labelText: StringConstants.email,
+                                  hintText: StringConstants.enterEmail.tr,
+                                  labelText: StringConstants.email.tr,
                                   keyboardType: TextInputType.emailAddress,
                                   onChanged: (email)=>context.read<LoginBloc>().add(EmailChange(email))
                               ),
@@ -84,8 +85,8 @@ class _LoginState extends State<LoginScreen>{
                                   key: WidgetKeys.loginPasswordField,
                                 controller: passwordController,
                                   validator: InputValidators.validatePassword,
-                                  hintText: StringConstants.enterPassword,
-                                  labelText: StringConstants.password,
+                                  hintText: StringConstants.enterPassword.tr,
+                                  labelText: StringConstants.password.tr,
                                   keyboardType: TextInputType.visiblePassword,
                                   onChanged: (password)=>context.read<LoginBloc>().add(PasswordChange(password))
                               ),
@@ -111,20 +112,20 @@ class _LoginState extends State<LoginScreen>{
                                 },
                                 context: context,
                                 showLoading: state.isSubmitting,
-                              child: Text(StringConstants.login,style: AppTextStyle.titleStyle16bw,)
+                              child: Text(StringConstants.login.tr,style: AppTextStyle.titleStyle16bw,)
                             ),
                             CommonWidgets.verticalSpace(height: 20),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(StringConstants.doNotHaveAnAccount,style: AppTextStyle.titleStyle14w,),
+                                Text(StringConstants.doNotHaveAnAccount.tr,style: AppTextStyle.titleStyle14w,),
                                 CommonWidgets.horizontalSpace(width: 5),
                                 GestureDetector(
                                   key: WidgetKeys.loginSignupButton,
                                   onTap: (){
                                     context.read<LoginBloc>().add(ClickOnSignUpButton());
                                   },
-                                    child: Text(StringConstants.signUp,style: AppTextStyle.titleStyle16gr,)),
+                                    child: Text(StringConstants.signUp.tr,style: AppTextStyle.titleStyle16gr,)),
                               ],
                             )
                           ],

@@ -22,6 +22,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../core/utils/app_image_picker.dart';
 
@@ -71,7 +72,7 @@ class _EditProfileState extends State<EditProfileScreen> {
         child: Scaffold(
           backgroundColor: AppColors.backGroundColor,
           resizeToAvoidBottomInset: false,
-          appBar: CommonWidgets.appBar(title: StringConstants.editProfile),
+          appBar: CommonWidgets.appBar(title: StringConstants.editProfile.tr),
           body: BlocBuilder<EditProfileBloc, EditProfileState>(
             builder: (context, state) {
               return Stack(
@@ -129,8 +130,8 @@ class _EditProfileState extends State<EditProfileScreen> {
                             CommonWidgets.commonTextField(
                               controller: nameController,
                               validator: InputValidators.validateName,
-                              hintText: StringConstants.enterUserName,
-                              labelText: StringConstants.userName,
+                              hintText: StringConstants.enterUserName.tr,
+                              labelText: StringConstants.userName.tr,
                               keyboardType: TextInputType.name,
                               onChanged: (password) => context
                                   .read<EditProfileBloc>()
@@ -139,8 +140,8 @@ class _EditProfileState extends State<EditProfileScreen> {
                             CommonWidgets.commonTextField(
                               controller: emailController,
                               validator: InputValidators.validateEmail,
-                              hintText: StringConstants.enterEmail,
-                              labelText: StringConstants.email,
+                              hintText: StringConstants.enterEmail.tr,
+                              labelText: StringConstants.email.tr,
                               keyboardType: TextInputType.emailAddress,
                               onChanged: (email) => context
                                   .read<EditProfileBloc>()
@@ -149,8 +150,8 @@ class _EditProfileState extends State<EditProfileScreen> {
                             CommonWidgets.commonTextField(
                               controller: phoneController,
                               validator: InputValidators.validatePhone,
-                              hintText: StringConstants.enterPhone,
-                              labelText: StringConstants.phone,
+                              hintText: StringConstants.enterPhone.tr,
+                              labelText: StringConstants.phone.tr,
                               keyboardType: TextInputType.phone,
                               onChanged: (email) => context
                                   .read<EditProfileBloc>()
@@ -159,8 +160,8 @@ class _EditProfileState extends State<EditProfileScreen> {
                             CommonWidgets.commonTextField(
                               controller: addressController,
                               validator: InputValidators.validateField,
-                              hintText: StringConstants.enterAddress,
-                              labelText: StringConstants.address,
+                              hintText: StringConstants.enterAddress.tr,
+                              labelText: StringConstants.address.tr,
                               keyboardType: TextInputType.name,
                               onChanged: (password) => context
                                   .read<EditProfileBloc>()
@@ -190,7 +191,7 @@ class _EditProfileState extends State<EditProfileScreen> {
                           showLoading: state.isSubmitting,
                           width: AppLength.screenFullWidth(),
                           child: Text(
-                            StringConstants.update,
+                            StringConstants.update.tr,
                             style: AppTextStyle.titleStyle16bw,
                           ),
                         ),

@@ -1,5 +1,7 @@
+import 'package:bloc_project/core/localization/translation.dart';
 import 'package:bloc_project/logic/bottom_nav/bottom_nav_bloc.dart';
 import 'package:bloc_project/logic/delivery_address/delivery_address_bloc.dart';
+import 'package:bloc_project/logic/language/language_bloc.dart';
 import 'package:bloc_project/logic/myorder/myorder_bloc.dart';
 import 'package:bloc_project/logic/person/person_bloc.dart';
 import 'package:bloc_project/routes/app_router.dart';
@@ -11,6 +13,8 @@ import 'core/themes/app_theme.dart';
 import 'logic/cart/cart_bloc.dart';
 import 'logic/favorite/favorite_bloc.dart';
 import 'logic/splash/splash_bloc.dart';
+import 'package:get/get.dart';
+
 
 
 void main() {
@@ -30,6 +34,8 @@ class MyApp extends StatelessWidget {
           create: (_) => BottomNavBloc(),
         ),
         BlocProvider(create: (_)=> MyOrderBloc()),
+        BlocProvider(create: (_)=> LanguageBloc()),
+
         BlocProvider(create: (_) => CartBloc()),
         BlocProvider(create: (_) => PersonBloc()),
         BlocProvider(create: (_) => FavoriteBloc()),
@@ -43,7 +49,11 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context,child){
-          return MaterialApp(
+          return GetMaterialApp (
+            translations: AppLanguage(),
+            locale: Locale("en","US"),
+            fallbackLocale: Locale('en', 'US'),
+
             title: 'Bloc Project',
             navigatorKey: NavigationService.navigatorKey,
             theme: AppTheme.lightTheme,

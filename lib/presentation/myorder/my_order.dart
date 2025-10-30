@@ -3,6 +3,7 @@ import 'package:bloc_project/logic/myorder/myorder_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import '../../core/colors/colors.dart';
@@ -30,7 +31,7 @@ class _MyOrderState extends State<MyOrderScreen> {
           // print(state.orders.isNotEmpty);
           return Scaffold(
             backgroundColor: AppColors.backGroundColor,
-            appBar: CommonWidgets.appBar(title: StringConstants.myOrder),
+            appBar: CommonWidgets.appBar(title: StringConstants.myOrder.tr),
             body: state.orders.isNotEmpty
                 ? Column(
               children: [
@@ -103,7 +104,7 @@ class _MyOrderState extends State<MyOrderScreen> {
             )
                 : Center(
               child: Text(
-                StringConstants.productNotFound,
+                StringConstants.productNotFound.tr,
                 style: AppTextStyle.titleStyle16bw,
               ),
             ),
